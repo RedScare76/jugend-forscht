@@ -1,0 +1,11 @@
+services:
+  handwriting-service:
+    build:
+      context: ./handwriting-synthesis
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      HANDWRITING_OUTPUT_DIR: /data/out
+    volumes:
+      - ./data/handwriting_out:/data/out
